@@ -1,0 +1,49 @@
+{% load static %}
+
+<div class="slider movie-items">
+	<div class="container">
+		<div class="row">
+			<div class="social-link">
+				<p>Follow us: </p>
+				<!-- DB -->
+
+				{% for link in social_links %}
+				<a href="{{ link.url }}">
+					<i class="{{ link.icon_class }}"></i>
+				</a>
+				{% endfor %}
+
+				{% comment %} <a href="#"><i class="ion-social-facebook"></i></a>
+				<a href="#"><i class="ion-social-twitter"></i></a>
+				<a href="#"><i class="ion-social-googleplus"></i></a>
+				<a href="#"><i class="ion-social-youtube"></i></a> {% endcomment %}
+				
+			</div>
+	    	<div  class="slick-multiItemSlider">
+				<!--  DB  -->
+
+				{% for movie in sliders %}
+				<div class="movie-item">
+					<img src="{{ movie.image_src }}">
+					<h6>{{ movie.movie_title }}</h6>
+				</div>
+				{% endfor %}
+
+
+	    		{% comment %} <div class="movie-item">
+	    			<div class="mv-img">
+	    				<a href="#"><img src="images/uploads/slider1.jpg" alt="" width="285" height="437"></a>
+	    			</div>
+	    			<div class="title-in">
+	    				<div class="cate">
+	    					<span class="blue"><a href="#">Sci-fi</a></span>
+	    				</div>
+	    				<h6><a href="#">Interstellar</a></h6>
+	    				<p><i class="ion-android-star"></i><span>7.4</span> /10</p>
+	    			</div>
+	    		</div> {% endcomment %}
+
+	    	</div>
+	    </div>
+	</div>
+</div>

@@ -24,8 +24,18 @@
 
 				{% for movie in sliders %}
 				<div class="movie-item">
-					<img src="{{ movie.image_src }}">
-					<h6>{{ movie.movie_title }}</h6>
+					<div class="mv-img">
+						<a href="{{ movie.anchor_url }}">
+							<img src="{% static movie.image_src %}" alt="" width="{{ movie.img_width }}" height="{{ movie.img_height }}">
+						</a>
+					</div>
+					<div class="title-in">
+						<div class="cate">
+							<span class="blue"><a href="#">{{ movie.movie_genre }}</a></span>
+						</div>
+						<h6><a href="{{ movie.anchor_url }}">{{ movie.movie_title }}</a></h6>
+						<p><i class="ion-android-star"></i><span>{{ movie.lower_rating }}</span> /{{ movie.upper_rating }}</p>
+					</div>
 				</div>
 				{% endfor %}
 

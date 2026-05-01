@@ -1,0 +1,75 @@
+{% load static %}
+<div class="latestnew">
+    <div class="container">
+        <div class="row ipad-width">
+            <div class="col-md-8">
+                {% if news_ad %}
+                    <div class="ads">
+                        <img src="{% static news_ad.img_src %}" alt="news ad" width="{{ news_ad.img_width }}" height="{{ news_ad.img_height }}">
+                    </div>
+                {% endif %}
+                <div class="title-hd">
+                    <h2>Latest news</h2>
+                </div>
+                {% if featured_news %}
+                    <div class="tabs">
+                        <div class="tab-content">
+                            <div id="tab31" class="tab active">
+                                <div class="row">
+                                    <div class="blog-item-style-1">
+                                        <img src="{% static featured_news.img_src %}" alt="{{ featured_news.img_alt }}" width="{{ featured_news.img_width }}" height="{{ featured_news.img_height }}">
+                                        <div class="blog-it-infor">
+                                            <h3><a href="#">{{ featured_news.title }}</a></h3>
+                                            <span class="time">{{ featured_news.time }}</span>
+                                            <p>{{ featured_news.content }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="morenew">
+                    <div class="title-hd">
+                        <h3>More news on Blockbuster</h3>
+                        <a href="#" class="viewall">See all Movies news<i class="ion-ios-arrow-right"></i></a>
+                    </div>
+                    <div class="more-items">
+                        <div class="left">
+                            {% for item in more_news_left %}
+                                <div class="more-it">
+                                    <h6><a href="#">{{ item.title }}</a></h6>
+                                    <span class="time">{{ item.time }}</span>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="right">
+                            {% for item in more_news_right %}
+                                <div class="more-it">
+                                    <h6><a href="#">{{ item.title }}</a></h6>
+                                    <span class="time">{{ item.time }}</span>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="sidebar">
+                    <div class="sb-twitter sb-it">
+                        <h4 class="sb-title">Tweet to us</h4>
+                        <div class="slick-tw">
+                            {% for tweet in tweets %}
+                                <div class="tweet item" id="">{{ tweet.content }}</div>
+                            {% empty %}
+                                <div class="tweet item" id="">No tweets available.</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -21,7 +21,7 @@
 	<link rel="profile" href="#">
 
     <!--Google Font-->
-    <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Dosis:400,700,500|Nunito:300,400,600' />
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Dosis:400,700,500|Nunito:300,400,600' />
 	<!-- Mobile specific meta -->
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone-no">
@@ -167,7 +167,7 @@
 									</ul>
 								</li>			
 								<li><a href="movielist.html">Movie list</a></li>
-								<li><a href="moviesingle.html">Movie single</a></li>
+								<li><a href="movies/">Movie single</a></li>
 								<li class="it-last"><a href="seriessingle.html">Series single</a></li>
 							</ul>
 						</li>
@@ -1087,10 +1087,13 @@
 			<div class="flex-child-ft item5">
 				<h4>Newsletter</h4>
 				<p>Subscribe to our newsletter system now <br> to get latest news from us.</p>
-				<form action="#">
-					<input type="text" placeholder="Enter your email...">
+				<form method="post" action="#">
+					{% csrf_token %}
+					    <input type="email" name="email" placeholder="Enter your email...">
+						<button type="submit" class="btn">
+							Subscribe now <i class="ion-ios-arrow-forward"></i>
+						</button>
 				</form>
-				<a href="#" class="btn">Subscribe now <i class="ion-ios-arrow-forward"></i></a>
 			</div>
 		</div>
 	</div>

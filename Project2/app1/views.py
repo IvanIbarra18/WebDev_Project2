@@ -36,4 +36,12 @@ def index_view(request):
     return render(request, 'app1/index.html', context)
 
 def movies_view(request):
+
+    if request.method == "POST":
+        email = request.POST.get("email")
+
+        if email:
+            Newsletter.objects.create(email=email)
+
+
     return render(request, 'app1/moviesingle.html')

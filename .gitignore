@@ -4,9 +4,7 @@ __pycache__/
 *$py.class
 
 # Virtual environment
-venv/
-env/
-ENV/
+.venv/
 
 # Django
 *.log

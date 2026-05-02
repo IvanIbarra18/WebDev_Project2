@@ -13,3 +13,6 @@ admin.site.register(News)
 admin.site.register(Tweet)
 admin.site.register(MovieTheater)
 admin.site.register(MovieTV)
+
+# Register the Newsletter model in the admin site
+admin.site.register(Newsletter)

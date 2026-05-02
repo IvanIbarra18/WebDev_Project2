@@ -31,6 +31,7 @@ class SocialLink(models.Model):
 
 class Celebrity(models.Model):
     anchor_url = models.CharField(max_length=200)
+    img_src = models.CharField(max_length=200, default='app1/images/uploads/ava1.jpg')
     img_width = models.IntegerField(default=0)
     img_height = models.IntegerField(default=0)
     celebrity_url = models.CharField(max_length=200)
@@ -83,4 +84,6 @@ class MovieTV(models.Model):
 
 
 
-
+# Additional model for newsletter subscription
+class Newsletter(models.Model):
+    email = models.EmailField()

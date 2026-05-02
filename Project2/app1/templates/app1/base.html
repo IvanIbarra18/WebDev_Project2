@@ -187,6 +187,7 @@
         <a href="#" class="close">x</a>
         <h3>sign up</h3>
         <form method="post" action="#">
+		{% csrf_token %}
             <div class="row">
                  <label for="username-2">
                     Username:
@@ -264,11 +265,15 @@
 			<div class="flex-child-ft item5">
 				<h4>Newsletter</h4>
 				<p>Subscribe to our newsletter system now <br> to get latest news from us.</p>
-				<form action="#">
-					<input type="text" placeholder="Enter your email...">
+				<form method="post" action="#">
+					{% csrf_token %}
+					    <input type="email" name="email" placeholder="Enter your email...">
+						<button type="submit" class="btn">
+							Subscribe now <i class="ion-ios-arrow-forward"></i>
+						</button>
 				</form>
-				<a href="#" class="btn">Subscribe now <i class="ion-ios-arrow-forward"></i></a>
-			</div>
+				{% comment %} <a href="#" class="btn">Subscribe now <i class="ion-ios-arrow-forward"></i></a>
+			</div> {% endcomment %}
 		</div>
 	</div>
 	<div class="ft-copyright">

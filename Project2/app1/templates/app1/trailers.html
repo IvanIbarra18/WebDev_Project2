@@ -8,41 +8,32 @@
 					<h2>in theater</h2>
 					<a href="#" class="viewall">View all <i class="ion-ios-arrow-right"></i></a>
 				</div>
-				
 				<div class="videos">
 				 	<div class="slider-for-2 video-ft">
-						{% for trailer, item in trailer_pairs %}
-				 		<div>
-					    	<iframe class="item-video" src="#" data-src="{{ trailer.trailer_URL }}"></iframe>
-					    </div>
-						{% empty %}
-				 		<div>
-					    	<iframe class="item-video" src="#" data-src="https://www.youtube.com/embed/1Q8fG0TtVAY"></iframe>
+
+						<!-- DB -->
+						{% for trailer in trailers %}
+						<div>
+					    	<iframe class="item-video" src="#" data-src="{{ trailer.trailer_URL }}" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 					    </div>
 						{% endfor %}
+						
 					</div>
 					<div class="slider-nav-2 thumb-ft">
-						{% for trailer, item in trailer_pairs %}
+						<!-- DB -->
+						{% for trailer in trailer_items %}
 						<div class="item">
 							<div class="trailer-img">
-								<img src="{% static item.img_src %}" alt="{{ item.img_alt }}" width="{{ item.img_width }}" height="{{ item.img_height }}">
+								<img src="{% static trailer.img_src %}"  alt="{{ trailer.img_alt }}" width="{{ trailer.img_width }}" height="{{ trailer.img_height }}">
 							</div>
 							<div class="trailer-infor">
-	                        	<h4 class="desc">{{ item.description }}</h4>
-	                        	<p>{{ item.duration }}</p>
-	                        </div>
-						</div>
-						{% empty %}
-						<div class="item">
-							<div class="trailer-img">
-								<img src="{% static 'app1/images/uploads/trailer7.jpg' %}" alt="trailer thumbnail" width="350" height="200">
-							</div>
-							<div class="trailer-infor">
-	                        	<h4 class="desc">Wonder Woman</h4>
-	                        	<p>2:30</p>
+	                        	<h4 class="desc">{{ trailer.description }}</h4>
+	                        	<p>{{ trailer.duration }}</p>
 	                        </div>
 						</div>
 						{% endfor %}
+						
+					
 					</div>
 				</div>   
 			</div>

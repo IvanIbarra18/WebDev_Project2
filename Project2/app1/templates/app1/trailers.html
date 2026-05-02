@@ -14,7 +14,7 @@
 						<!-- DB -->
 						{% for trailer in trailers %}
 						<div>
-					    	<iframe class="item-video" src="#" data-src="{{ trailer.trailer_URL }}"></iframe>
+					    	<iframe class="item-video" src="#" data-src="{{ trailer.trailer_URL }}" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 					    </div>
 						{% endfor %}
 						
